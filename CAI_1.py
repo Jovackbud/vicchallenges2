@@ -17,7 +17,13 @@ def multiplication_learning():
             answer = int(input('Enter your answer:'))
         else:
             print('Very Good!')
-    multiplication_learning()
+
+    print("enter 'N' to go to next question or 'E' to end")
+    response_continue_or_not = str(input('Enter response here:'))
+    if response_continue_or_not.upper() == 'N':
+        multiplication_learning()
+    elif response_continue_or_not.upper() == 'O':
+        pass
 
 
 multiplication_learning()
