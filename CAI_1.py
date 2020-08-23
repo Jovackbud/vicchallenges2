@@ -9,10 +9,13 @@ def multiplication_learning():
 
     answer = int(input('Enter your answer:'))
     if answer == a * b:
-        print('Very Good!')
+        right_response = {1: 'Very Good!', 2: 'Excellent', 3: 'Nice Work!', 4: 'Keep up the good work!'}
+        print(right_response[randint(1, 4)])
     else:
         while answer != a * b:
-            print('No, try again')
+            wrong_response = {1: 'No, please try again!', 2: 'Wrong, try once more', 3: 'Don`t give up!',
+                              4: 'No, keep trying!'}
+            print(wrong_response[randint(1, 4)])
             print('what is {} multiplied by {}'.format(a, b))
             answer = int(input('Enter your answer:'))
         else:
