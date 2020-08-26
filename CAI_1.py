@@ -1,32 +1,37 @@
 # Write a python program that will help an elementary school student learn multiplication
+
+# import radint module
 from random import randint
+
+right_answers = 0
+total_question = 0
 
 
 def multiplication_learning():
+    global right_answers
+    global total_question
+    # generate the random numbers and print the question
     a = randint(0, 9)
     b = randint(0, 9)
-    print('what is {} multiplied by {}'.format(a, b))
-
-    answer = int(input('Enter your answer:'))
+    answer = int(input('How much is {} multiplied by {}:'.format(a, b)))
+    total_question += 1
     if answer == a * b:
         right_response = {1: 'Very Good!', 2: 'Excellent', 3: 'Nice Work!', 4: 'Keep up the good work!'}
         print(right_response[randint(1, 4)])
+        right_answers += 1
     else:
-        while answer != a * b:
-            wrong_response = {1: 'No, please try again!', 2: 'Wrong, try once more', 3: 'Don`t give up!',
-                              4: 'No, keep trying!'}
-            print(wrong_response[randint(1, 4)])
-            print('what is {} multiplied by {}'.format(a, b))
-            answer = int(input('Enter your answer:'))
-        else:
-            print('Very Good!')
+        wrong_response = {1: 'No, please try again!', 2: 'Wrong, try once more', 3: 'Don`t give up!',
+                          4: 'No, keep trying!'}
+        print(wrong_response[randint(1, 4)])
 
-    print("enter 'N' to go to next question or 'E' to end")
-    response_continue_or_not = str(input('Enter response here:'))
-    if response_continue_or_not.upper() == 'N':
-        multiplication_learning()
-    elif response_continue_or_not.upper() == 'O':
-        pass
+    def scoring():
+        if total_question < 10:
+            multiplication_learning()
+        else:
+            score = (right_answers / total_question) * 100
+            print(f'You scored {score} %')
+
+    scoring()
 
 
 multiplication_learning()
