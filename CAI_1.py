@@ -10,6 +10,7 @@ total_question = 0
 def multiplication_learning():
     global right_answers
     global total_question
+
     # generate the random numbers and print the question
     a = randint(0, 9)
     b = randint(0, 9)
@@ -24,12 +25,17 @@ def multiplication_learning():
                           4: 'No, keep trying!'}
         print(wrong_response[randint(1, 4)])
 
+    # checking to score
     def scoring():
-        if total_question < 10:
+        if total_question < 5:
             multiplication_learning()
         else:
             score = (right_answers / total_question) * 100
             print(f'You scored {score} %')
+            if score < 75:
+                print('Please ask your teacher for extra help')
+            else:
+                print('Congratulations, you are ready to go to the next level')
 
     scoring()
 
