@@ -7,7 +7,7 @@ right_answers = 0
 total_question = 0
 
 
-def multiplication_learning():
+def multiplication_learning1():
     global right_answers
     global total_question
 
@@ -27,8 +27,8 @@ def multiplication_learning():
 
     # checking to score
     def scoring():
-        if total_question < 5:
-            multiplication_learning()
+        if total_question < 10:
+            multiplication_learning1()
         else:
             score = (right_answers / total_question) * 100
             print(f'You scored {score} %')
@@ -40,4 +40,41 @@ def multiplication_learning():
     scoring()
 
 
-multiplication_learning()
+multiplication_learning1()
+
+
+# level 2
+def multiplication_learning2():
+    global right_answers
+    global total_question
+
+    # generate the random numbers and print the question
+    a = randint(10, 99)
+    b = randint(100, 999)
+    answer = int(input('How much is {} multiplied by {}:'.format(a, b)))
+    total_question += 1
+    if answer == a * b:
+        right_response = {1: 'Very Good!', 2: 'Excellent', 3: 'Nice Work!', 4: 'Keep up the good work!'}
+        print(right_response[randint(1, 4)])
+        right_answers += 1
+    else:
+        wrong_response = {1: 'No, please try again!', 2: 'Wrong, try once more', 3: 'Don`t give up!',
+                          4: 'No, keep trying!'}
+        print(wrong_response[randint(1, 4)])
+
+    # checking to score
+    def scoring():
+        if total_question < 5:
+            multiplication_learning2()
+        else:
+            score = (right_answers / total_question) * 100
+            print(f'You scored {score} %')
+            if score < 75:
+                print('Please ask your teacher for extra help')
+            else:
+                print('Congratulations, you are ready to go to the next level')
+
+    scoring()
+
+
+multiplication_learning2()
