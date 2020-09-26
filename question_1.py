@@ -8,4 +8,6 @@ def triangle_check(a, b, c):
         print(False)
 
 
-triangle_check(1, 2, 3)
+triangle_check(int(input('Enter the length of the first side:')),
+ int(input('Enter the length of the first side:')), 
+ int(input('Enter the length of the first side:')))

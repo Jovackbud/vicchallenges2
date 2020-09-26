@@ -3,7 +3,7 @@
 
 def remove_duplicates(string):
     table = []
-    for item in string:
+    for item in string.lower():
         if item in table:
             pass
         else:
@@ -12,4 +12,4 @@ def remove_duplicates(string):
     print(report)
 
 
-remove_duplicates('GHIIIKKKL')
+remove_duplicates(str(input('Enter the string here: ')))

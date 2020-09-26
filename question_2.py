@@ -2,17 +2,18 @@
 # only the numbers that is a multiple of the number given in the array.
 
 
-def multiples_only(*args, num=3):
+def multiples_only(*args, num):
     multiples = []
     for item in args:
-        if item == 3:
+        if item == num:
             pass
         elif item % num == 0:
             multiples.append(item)
     print(multiples)
 
 
-arrayA = [21, 4, 9, 8, 13, 40, 32, 18, 27, 31, 11, 29, 33, 37, 41]
+arrayA = [input('Enter the numbers you want to check seperated with commas: ')]
+numA = int(input('Enter the number which multiple you want: '))
 
 
-multiples_only(21, 4, 9, 8, 13, 40, 32, 18, 27, 31, 11, 29, 33, 37, 41)
+multiples_only(arrayA, numA)
