@@ -25,7 +25,7 @@ def multiplication_learning():
                           4: 'No, keep trying!'}
         print(wrong_response[randint(1, 4)])
 
-    # checking to score
+# checking to score
     def scoring():
         if total_question < 3:
             multiplication_learning()
@@ -122,18 +122,16 @@ def subtraction_learning():
 
 # level selection
 def level_selection(level):
-    levels = [1, 2, 3, 4, 5]
-    if level in levels:
-        if level == 1:
-            addition_learning()
-        elif level == 2:
-            subtraction_learning()
-        elif level == 3:
-            multiplication_learning()
-        elif level == 4:
-            pass
-        elif level == 5:
-            pass
+    if level == 1:
+        addition_learning()
+    elif level == 2:
+        subtraction_learning()
+    elif level == 3:
+        multiplication_learning()
+    elif level == 4:
+        pass
+    elif level == 5:
+        pass
     else:
         pass
 
