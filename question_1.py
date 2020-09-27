@@ -9,5 +9,5 @@ def triangle_check(a, b, c):
 
 
 triangle_check(int(input('Enter the length of the first side:')),
- int(input('Enter the length of the first side:')), 
- int(input('Enter the length of the first side:')))
+               int(input('Enter the length of the first side:')),
+               int(input('Enter the length of the first side:')))
