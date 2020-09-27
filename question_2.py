@@ -2,7 +2,7 @@
 # only the numbers that is a multiple of the number given in the array.
 
 
-def multiples_only(*args, num):
+def multiples_only(num=2, *args):
     multiples = []
     for item in args:
         if item == num:
@@ -12,8 +12,4 @@ def multiples_only(*args, num):
     print(multiples)
 
 
-arrayA = [input('Enter the numbers you want to check seperated with commas: ')]
-numA = int(input('Enter the number which multiple you want: '))
-
-
-multiples_only(arrayA, numA)
+multiples_only(int(input("Enter the divisor:")), tuple(input("Enter numbers to check:")))

@@ -85,9 +85,9 @@ def scoring():
     score = (right_answers / total_question) * 100
     print(f'You scored {score} %')
     if score < 75:
-        print('Please ask your teacher for extra help')
+        print('\nPlease ask your teacher for extra help')
     else:
-        print('Congratulations, you are ready to go to the next level' + '\n')
+        print('\nCongratulations, you are ready to go to the next level' + '\n')
 
 
 def comp_addition():
@@ -134,7 +134,7 @@ def mixed_learning():
 
 
 # level selection
-def level_selection(level):
+def level_selection(name, level):
     if level == 1:
         comp_addition()
     elif level == 2:
@@ -146,7 +146,9 @@ def level_selection(level):
     elif level == 5:
         mixed_learning()
     else:
-        level_selection(int(input("Enter level here:")))
+        level_selection(str(input("Enter your name:")), int(input("Enter level here:")))
+    print(f"Good bye {name}. \n")
+    level_selection(str(input("Enter your name:")), int(input("Enter level here:")))
 
 
-level_selection(int(input("Enter level here:")))
+level_selection(str(input("Enter your name:")), int(input("Enter level here:")))
