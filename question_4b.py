@@ -13,22 +13,35 @@ def guess_game():
     while player_guess != expected_input:
         counter += 1
         if player_guess < expected_input:
-            print('Too low, try again')
+            print('No!!!' + 'Too low, try again\n')
         elif player_guess > expected_input:
-            print('Too high, try again')
+            print('No!!!' + 'Too high, try again\n')
         player_guess = int(input('Guess a number between 1 to 1000:'))
     else:
-        pass
+        print('Right Guess!!!\n')
 
 
 def score_check():
     if counter < 10:
-        print('Either you know the secret or you got lucky!')
+        print('You guessed right in less than ten(10) tries, Either you know the secret or you got lucky!\n')
     elif counter > 10:
-        print('You should be able to do better!')
+        print('You guessed right after more than ten(10) tries, You should be able to do better!\n')
     else:
-        print('Aha! You know the secret!')
+        print('You guessed right in exactly ten(10) tries, Aha! You know the secret!\n')
 
 
-guess_game()
-score_check()
+def full_game():
+    full_guess = 0
+    while full_guess < 1:
+        full_guess += 1
+        guess_game()
+        score_check()
+
+    else:
+        print('Do you want to play again?')
+        decision = int(input('Enter 1 to play again or any other key to end: '))
+        if decision == 1:
+            full_game()
+
+
+full_game()

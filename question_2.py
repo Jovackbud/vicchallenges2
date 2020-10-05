@@ -2,14 +2,10 @@
 # only the numbers that is a multiple of the number given in the array.
 
 
-def multiples_only(num=2, *args):
-    multiples = []
-    for item in args:
-        if item == num:
-            pass
-        elif item % num == 0:
-            multiples.append(item)
-    print(multiples)
-
-
-multiples_only(int(input("Enter the divisor:")), tuple(input("Enter numbers to check:")))
+number = int(input("Enter the number which multiple you want:"))
+nums_to_check = [21, 4, 9, 8, 13, 40, 32, 18, 27, 31, 11, 29, 33, 37, 41]
+multiples = []
+for num in nums_to_check:
+    if num % number == 0:
+        multiples.append(num)
+print(multiples)

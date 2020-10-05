@@ -14,12 +14,12 @@ def addition_learning():
     answer = int(input('How much is {} plus {}:'.format(a, b)))
     if answer == a + b:
         right_response = {1: 'Very Good!', 2: 'Excellent', 3: 'Nice Work!', 4: 'Keep up the good work!'}
-        print(right_response[randint(1, 4)])
+        print(right_response[randint(1, 4)] + '\n')
         right_answers += 1
     else:
         wrong_response = {1: 'No, please try again!', 2: 'Wrong, try once more', 3: 'Don`t give up!',
                           4: 'No, keep trying!'}
-        print(wrong_response[randint(1, 4)])
+        print(wrong_response[randint(1, 4)] + '\n')
     total_question += 1
 
 
@@ -33,12 +33,12 @@ def subtraction_learning():
     answer = int(input('What is the difference between {} and {}:'.format(a, b)))
     if answer == abs(a - b):
         right_response = {1: 'Very Good!', 2: 'Excellent', 3: 'Nice Work!', 4: 'Keep up the good work!'}
-        print(right_response[randint(1, 4)])
+        print(right_response[randint(1, 4)] + '\n')
         right_answers += 1
     else:
         wrong_response = {1: 'No, please try again!', 2: 'Wrong, try once more', 3: 'Don`t give up!',
                           4: 'No, keep trying!'}
-        print(wrong_response[randint(1, 4)])
+        print(wrong_response[randint(1, 4)] + '\n')
     total_question += 1
 
 
@@ -52,12 +52,12 @@ def multiplication_learning():
     answer = int(input('How much is {} multiplied by {}:'.format(a, b)))
     if answer == a * b:
         right_response = {1: 'Very Good!', 2: 'Excellent', 3: 'Nice Work!', 4: 'Keep up the good work!'}
-        print(right_response[randint(1, 4)])
+        print(right_response[randint(1, 4)] + '\n')
         right_answers += 1
     else:
         wrong_response = {1: 'No, please try again!', 2: 'Wrong, try once more', 3: 'Don`t give up!',
                           4: 'No, keep trying!'}
-        print(wrong_response[randint(1, 4)])
+        print(wrong_response[randint(1, 4)] + '\n')
     total_question += 1
 
 
@@ -73,11 +73,11 @@ def division_learning():
     if answer == a:
         right_answers += 1
         right_response = {1: 'Very Good!', 2: 'Excellent', 3: 'Nice Work!', 4: 'Keep up the good work!'}
-        print(right_response[randint(1, 4)])
+        print(right_response[randint(1, 4)] + '\n')
     else:
         wrong_response = {1: 'No, please try again!', 2: 'Wrong, try once more', 3: 'Don`t give up!',
                           4: 'No, keep trying!'}
-        print(wrong_response[randint(1, 4)])
+        print(wrong_response[randint(1, 4)] + '\n')
     total_question += 1
 
 
@@ -85,9 +85,9 @@ def scoring():
     score = (right_answers / total_question) * 100
     print(f'You scored {score} %')
     if score < 75:
-        print('\nPlease ask your teacher for extra help')
+        print('Please ask your teacher for extra help')
     else:
-        print('\nCongratulations, you are ready to go to the next level' + '\n')
+        print('Congratulations, you are ready to go to the next level' + '\n')
 
 
 def comp_addition():
@@ -147,8 +147,7 @@ def level_selection(name, level):
         mixed_learning()
     else:
         level_selection(str(input("Enter your name:")), int(input("Enter level here:")))
-    print(f"Good bye {name}. \n")
-    level_selection(str(input("Enter your name:")), int(input("Enter level here:")))
+    print(f"Good bye {name.title()}. \n")
 
 
 level_selection(str(input("Enter your name:")), int(input("Enter level here:")))
