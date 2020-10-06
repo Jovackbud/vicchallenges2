@@ -147,7 +147,7 @@ def level_selection(name, level):
         mixed_learning()
     else:
         level_selection(str(input("Enter your name:")), int(input("Enter level here:")))
-    print(f"Good bye {name.title()}. \n")
+    print(f"Good bye {name.title()}.")
 
 
 level_selection(str(input("Enter your name:")), int(input("Enter level here:")))
