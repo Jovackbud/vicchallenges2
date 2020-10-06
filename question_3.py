@@ -11,5 +11,5 @@ def calculating_distance(x1, y1, x2, y2):
 
 calculating_distance(int(input('Enter the first X coordinate: ')),
                      int(input('Enter the first Y coordinate: ')),
-                     int(input('Enter the second X cordinate: ')),
+                     int(input('Enter the second X coordinate: ')),
                      int(input('Enter the second Y coordinate: ')))
